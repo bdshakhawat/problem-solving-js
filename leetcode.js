@@ -36,6 +36,37 @@
 // word1 and word2 consist of lowercase English letters.
 
 // Solution:
+
+// write a function called mergeAlternating that takes two string parameters: word1 and word2
 function mergeAlternating(word1,word2){
-    
+// Declare a variable 'merged' and initialize it as an empty string. 
+// This string will hold the result of our merged words.
+let merged=" ";
+
+//Declare another variable maxLength to store the length of the longer word among word1 and word2. 
+// This is done using the 'Math.max function', which returns the larger of the two provided values.
+let maxLength=Math.max(word1.length, word2.length);
+
+//  Start a for loop that will iterate through each index of the words up to the maxLength.
+  for (let i=0; i<maxLength; i++){
+//  If the current index i is less than the length of word1, we append the character at 
+// index i from word1 to our merged string.
+   if (i < word1.length) {
+    merged += word1[i];
+  }
+//   Similarly, if the current index i is less than the length of word2,
+//  we append the character at index i from word2 to our merged string.
+ if (i < word2.length) {
+    merged += word2[i];
+ }
+
+
+
+
+  } 
 }
+// Test the function
+let test1 = mergeAlternating("abc", "pqr");   // Expected output: "apbqcr"
+let test2 = mergeAlternating("ab", "pqrs");   // Expected output: "apbqrs"
+let test3 = mergeAlternating("abcd", "pq");   // Expected output: "apbqcd"
+
